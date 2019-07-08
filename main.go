@@ -290,9 +290,9 @@ func main() {
 			)
 
 			if activeUser.Name != "" {
-				// 格式: BaiduPCS-Go:<工作目录> <百度ID>$
+				// 格式: BaiduPCS-Go@<百度ID> <工作目录>$>
 				// 工作目录太长时, 会自动缩略
-				prompt = app.Name + ":" + converter.ShortDisplay(path.Base(activeUser.Workdir), NameShortDisplayNum) + " " + activeUser.Name + "$ "
+				prompt = app.Name + "@" + activeUser.Name + " " + converter.ShortDisplay(path.Base(activeUser.Workdir), NameShortDisplayNum) + "$> "
 			} else {
 				// BaiduPCS-Go >
 				prompt = app.Name + " > "
